@@ -1,5 +1,4 @@
-
-![logo2](https://user-images.githubusercontent.com/95839411/152086683-6f425877-a33d-4493-8845-114348bafd8b.png)
+![logo550 copy](https://user-images.githubusercontent.com/95839411/152086819-4cc033f9-a5e9-46b3-b1f0-07d610bf8bf2.png)
 
 ZoltarBall  - The Future of Football Prediction - Beta 1.0
 
