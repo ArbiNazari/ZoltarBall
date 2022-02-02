@@ -13,7 +13,7 @@ percentages, past wins/loses, etc., and compile the best outcome based on mathem
 Functionaltiy: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
 
 
-Our Task
+Our Task:
 
 Prproject should fulfill the following requirements:
 
@@ -41,6 +41,7 @@ Prproject should fulfill the following requirements:
 
 
 Created By: Daylon Polk, Kyle Bader, Steven Rousta and Arbi Nazari (Copyright 2022).
+
       Zoltar is Designed for Entertainment Purposes Only - The National Helpline on Problem Gambling operates 
       the National Problem Gambling Helpline Network (1-800-522-4700).
 
