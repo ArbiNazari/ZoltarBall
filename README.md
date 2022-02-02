@@ -36,12 +36,12 @@ Prproject should fulfill the following requirements:
      - Have a clean repository that meets quality coding standards (file structure, naming conventions, 
        follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 
-     - Have a quality README (with unique name, description, technologies used, screenshot, and link to 
-       deployed application).
+     - Have a quality README (with unique name, description, technologies used, screenshot, 
+       and link to deployed application).
 
 
 Created By: Daylon Polk, Kyle Bader, Steven Rousta and Arbi Nazari (Copyright 2022).
 
-      Zoltar is Designed for Entertainment Purposes Only - The National Helpline on Problem Gambling operates 
-      the National Problem Gambling Helpline Network (1-800-522-4700).
+      Zoltar is Designed for Entertainment Purposes Only - The National Helpline on Problem Gambling 
+      operates the National Problem Gambling Helpline Network (1-800-522-4700).
 
