@@ -1,4 +1,4 @@
-# ZoltarBall - The Future of Football Prediction
+# ZoltarBall Beta 1.0 - The Future of Football Prediction
 
 
 In 2020, the NFL with a combination of 32 teams generated a revenue of $12.2 bullion U.S. dollars.  
