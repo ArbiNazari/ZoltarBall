@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
+  }
+
+  header a {
+    text-decoration: none;
+    color: #020201;
+  }
+  
+  header nav {
+    margin: 7px 0;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+
+  header nav ul li a {
+  padding: 10px 15px;
+  font-weight: lighter;
+  font-size: 1.55vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header nav ul li a:hover {
+  background: #080803;
+  color: #f5f103;
+  border-radius: 15px;
+  text-shadow: none;
+  
+}
+
+/* Hero Style Start */
+.hero {
+    background-image: url('../images/Hero.png');
+    flex-wrap: wrap;
+
+  }
+
+  .hero-form {
+    border: 3px solid #024e76;
+    background-color: rgba(255, 225, 56, 0.8);
+    padding: 20px;
+    color: #024e76;
+    width: 40%;
+    margin: 3.5%;
+    border-radius: 15px;
+  
+  }
+
+  .hero-cta {
+    width: 10%;
+    text-align: right;
+    margin: 55px;
+    color: #fff;
+    font-size: 18px;
+    line-height: 7.8;
+  }
+
+  /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    header {
+      padding-bottom: 0;
+      justify-content: center;
+    }
+  
+    header h1 {
+      width: 100%;
+      text-align: center;
+    }
+  
+    header nav ul {
+      margin-top: 20px;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    header nav ul li a {
+      font-size: 20px;
+    }
+  
+    footer h2, footer div {
+      text-align: center;
+      width: 100%;
+    }.hero-cta, .hero-form {
+      width: 100%;
+    }
+    
+    .hero-cta {
+      text-align: center;
+    }
+    .section-title {
+      width: 80%;
+    }
+    
+    .trainer {
+      flex: 0 70%;
+    }
+    
+    .contact-info iframe{
+      flex: 1 100%;
+    }
+    @media screen and (max-width: 575px) {
+  
+      .hero-form button {
+        width: 100%;
+      }
+    
+      .section-title {
+        width: 95%;
+      }
+    
+      .intro p {
+        width: 100%;
+      }
+    
+      .trainer {
+        flex: 0 100%;
+      }
+    
+      .contact-info {
+        text-align: center;
+      }
+    
+      .contact-info > * {
+        flex: 0 100%;
+      }
+    }
+    .contact-form {
+      order: 3;
+    }
