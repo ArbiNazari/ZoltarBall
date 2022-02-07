@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+
+![newwogo](https://user-images.githubusercontent.com/95839411/152275220-ae38b98c-b1e1-4637-a240-fc54acad8bd1.png)
+
+=======
 ![newwogo](https://user-images.githubusercontent.com/95839411/152275187-1316f894-0c3d-48bb-a72b-f7977605fd30.png)
 
+>>>>>>> main
 # ZoltarBall  - The Future of Football Prediction - Beta 1.0
 
 
@@ -12,7 +18,7 @@ $40 million to $75 million on Super Bowl games.
 Discreptions: ZalberBall is a game prediction engines that compiles past and current team stats, scoring 
 percentages, past wins/loses, etc., and compiles the best outcome based on mathematic statistics.  
 
-Functionaltiy: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
+Functionality: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
 
 
 # Our Task:
@@ -46,3 +52,4 @@ Created By: Daylon Polk, Kyle Bader, Steven Rousta and Arbi Nazari (Copyright 20
 
       Zoltar is Designed for Entertainment Purposes Only - The National Helpline on Problem Gambling 
       operates the National Problem Gambling Helpline Network (1-800-522-4700).
+      
