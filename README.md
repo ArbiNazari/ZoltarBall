@@ -14,7 +14,7 @@ Application Name: ZoltarBall
 Discreptions: ZalberBall is a game prediction engines that compiles past and current team stats, scoring 
 percentages, past wins/loses, etc., and compiles the best outcome based on mathematic statistics.  
 
-Functionaltiy: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
+Functionality: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
 
 
 Our Task:
