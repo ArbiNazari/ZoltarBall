@@ -1,13 +1,13 @@
 ![newwogo](https://user-images.githubusercontent.com/95839411/152275187-1316f894-0c3d-48bb-a72b-f7977605fd30.png)
 
-ZoltarBall  - The Future of Football Prediction - Beta 1.0
+# ZoltarBall  - The Future of Football Prediction - Beta 1.0
 
 
 In 2020, the NFL with a combination of 32 teams generated a revenue of $12.2 bullion U.S. dollars.  
 2020 Super Bowl generated a record of $449 million dollars. On average, bettors bet around 
 $40 million to $75 million on Super Bowl games.
 
-Application Name: ZoltarBall
+# Application Name: ZoltarBall
 
 Discreptions: ZalberBall is a game prediction engines that compiles past and current team stats, scoring 
 percentages, past wins/loses, etc., and compiles the best outcome based on mathematic statistics.  
@@ -15,7 +15,7 @@ percentages, past wins/loses, etc., and compiles the best outcome based on mathe
 Functionaltiy: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
 
 
-Our Task:
+# Our Task:
 
 Prproject should fulfill the following requirements:
 
