@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 
-https://user-images.githubusercontent.com/95839411/152090091-9a7d94b9-ec31-49c1-b621-01838fdf3af6.png)
->>>>>>> e981e24b894a7fbd9a88b8ee88c0606c09ecf25d
+![newwogo](https://user-images.githubusercontent.com/95839411/152275220-ae38b98c-b1e1-4637-a240-fc54acad8bd1.png)
 
 =======
 ![newwogo](https://user-images.githubusercontent.com/95839411/152275187-1316f894-0c3d-48bb-a72b-f7977605fd30.png)
