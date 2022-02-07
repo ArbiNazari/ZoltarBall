@@ -2,7 +2,7 @@
 https://user-images.githubusercontent.com/95839411/152090091-9a7d94b9-ec31-49c1-b621-01838fdf3af6.png)
 >>>>>>> e981e24b894a7fbd9a88b8ee88c0606c09ecf25d
 
-ZoltarBall  - The Future of Football Prediction - Beta 1.0
+# ZoltarBall  - The Future of Football Prediction - Beta 1.0
 
 
 In 2020, the NFL with a combination of 32 teams generated a revenue of $12.2 bullion U.S. dollars.  
@@ -17,7 +17,7 @@ percentages, past wins/loses, etc., and compiles the best outcome based on mathe
 Functionality: HTML, CSS FRAMEWORK, BOOTSTRAP, JAVASCRIPT - THIRD PARTY API's 
 
 
-Our Task:
+# Our Task:
 
 Prproject should fulfill the following requirements:
 
