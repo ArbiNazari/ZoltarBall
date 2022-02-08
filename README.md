@@ -1,4 +1,4 @@
-![newwogo](https://user-images.githubusercontent.com/95839411/152708680-95f31760-d34c-477e-a027-f9311c1bf4af.png)
+![newwogo](https://user-images.githubusercontent.com/95839411/152708667-a5682e0b-abb7-441b-bc68-6c132f69be43.png)
 
 # ZoltarBall  - The Future of Football Prediction - Beta 1.0
 
