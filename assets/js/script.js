@@ -6,12 +6,15 @@ var passFetchArr = [];
 var winFetchArr = [];
 var rushFetchArr = [];
 var recFetchArr = [];
-// console.log(teamListEl);
+var teamSearched ='';
+
+
 
 
 // GET STATS
 function getStats() {
-
+    teamSearched = teamListEl.value;
+    console.log(teamSearched);
     fetch("https://nfl-team-stats.p.rapidapi.com/v1/nfl-stats/teams/win-stats/2020", {
         "method": "GET",
         "headers": {
@@ -71,7 +74,7 @@ function getStats() {
                                 .then(data => {
                                     passFetchArr = data;
                                     console.log(data);
-                                    displayStats();
+                                    displayStats(teamSearched);
                                 })
                                 .catch(err => {
                                     console.error(err);
@@ -95,7 +98,7 @@ function getStats() {
 };
 
 
-function displayStats() {
+function displayStats(team) {
     // removes original hero banner 
     heroContainerEl.classList.remove("hero");
     heroContainerEl.classList.add("stats-team");
@@ -116,49 +119,62 @@ function displayStats() {
     // console.log("stuff");
     // console.log(winFetchArr);
 
+
+    
+    var selectedTeamData = {fullName: team,
+                            mascotName: team.split(" ")[1]}
+
+
+
     //Wins Array
-    $.each(winFetchArr, function () {
-        if (winTeamName == this.value) {
-            winRatePercentage = this.winRatePercentage;
+
+    for (var i = 0; i < winFetchArr.length; i++) {
+        if (winFetchArr[i].name === selectedTeamData.fullName) {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage
         }
-    });
-    //Receiving Array
-    $.each(recFetchArr, function () {
-        if (teamName == this.value) {
-            yards = this.yards;
+    }
+
+    for (var i = 0; i < recFetchArr.length; i++) {
+        if (recFetchArr[i].name === selectedTeamData.mascotName) {
+                selectedTeamData.recYards = recFetchArr[i].yards
         }
-    });
+    }
+   
+
     // Passing Array
-    $.each(passFetchArr, function () {
-        if (teamName == this.selectedIndex) {
-            passYards = this.passYards;
-            completions = this.completions;
-            touchdowns = this.touchdowns;
+    for (var i = 0; i < passFetchArr.length; i++) {
+        if (passFetchArr[i].name === selectedTeamData.mascotName) {
+                selectedTeamData.passYards = passFetchArr[i].passYards;
+                selectedTeamData.completions = passFetchArr[i].completions;
+                selectedTeamData.touchdowns = passFetchArr[i].touchdowns;
         }
-    });
+    }
+  
     // Rushing Array
-    $.each(rushFetchArr, function () {
-        if (teamName == this.selectedIndex) {
-            yards = this.yards;
+    for (var i = 0; i < rushFetchArr.length; i++) {
+        if (rushFetchArr[i].name === selectedTeamData.mascotName) {
+                selectedTeamData.rushYards = rushFetchArr[i].yards
         }
-    });
+    }
+
+    console.log(selectedTeamData);
 
 
 
     var teamWins = document.createElement("h4");
-    teamWins.innerHTML = "Win Percentage: " + winRatePercentage;
+    teamWins.innerHTML = "Win Percentage: " + selectedTeamData.winRatePercentage;
     heroContainerEl.append(teamWins);
 
     var teamPassing = document.createElement("h4");
-    teamPassing.innerHTML = "Passing yards per game: " + passYards + "<br />Completions: " + completions + "<br />Touchdowns: " + touchdowns;
+    teamPassing.innerHTML = "Passing yards per game: " + selectedTeamData.passYards + "<br />Completions: " + selectedTeamData.completions + "<br />Touchdowns: " + selectedTeamData.touchdowns;
     heroContainerEl.append(teamPassing);
 
     var teamRushing = document.createElement("h4");
-    teamRushing.innerHTML = "Rushing yards per game: " + rushYards;
+    teamRushing.innerHTML = "Rushing yards per game: " + selectedTeamData.rushYards;
     heroContainerEl.append(teamRushing);
 
     var teamReceptions = document.createElement("h4");
-    teamReceptions.innerHTML = "Receiving yards per game: " + yards;
+    teamReceptions.innerHTML = "Receiving yards per game: " + selectedTeamData.recYards;
     heroContainerEl.append(teamReceptions);
 
 
