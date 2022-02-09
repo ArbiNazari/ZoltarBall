@@ -153,7 +153,11 @@ img {
   width: 200px;
 }
 
+/* STATS DISPLAY start */
 
+.stats-team {
+  font-size: 30px;
+}
 
   /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
