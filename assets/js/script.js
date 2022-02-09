@@ -120,7 +120,7 @@ function displayStats(team) {
     // console.log(winFetchArr);
 
 
-    
+
     var selectedTeamData = {fullName: team,
                             mascotName: team.split(" ")[1]}
 
@@ -130,13 +130,13 @@ function displayStats(team) {
 
     for (var i = 0; i < winFetchArr.length; i++) {
         if (winFetchArr[i].name === selectedTeamData.fullName) {
-                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
         }
     }
 
     for (var i = 0; i < recFetchArr.length; i++) {
         if (recFetchArr[i].name === selectedTeamData.mascotName) {
-                selectedTeamData.recYards = recFetchArr[i].yards
+                selectedTeamData.recYards = recFetchArr[i].yards;
         }
     }
    
@@ -153,30 +153,31 @@ function displayStats(team) {
     // Rushing Array
     for (var i = 0; i < rushFetchArr.length; i++) {
         if (rushFetchArr[i].name === selectedTeamData.mascotName) {
-                selectedTeamData.rushYards = rushFetchArr[i].yards
+                selectedTeamData.rushYards = rushFetchArr[i].yards;
         }
     }
 
-    console.log(selectedTeamData);
+    // console.log(selectedTeamData);
 
-
+    var teamSeasonStats = document.createElement("h3");
+    teamSeasonStats.innerHTML = "Season stats";
+    heroContainerEl.append(teamSeasonStats);
 
     var teamWins = document.createElement("h4");
     teamWins.innerHTML = "Win Percentage: " + selectedTeamData.winRatePercentage;
     heroContainerEl.append(teamWins);
 
     var teamPassing = document.createElement("h4");
-    teamPassing.innerHTML = "Passing yards per game: " + selectedTeamData.passYards + "<br />Completions: " + selectedTeamData.completions + "<br />Touchdowns: " + selectedTeamData.touchdowns;
+    teamPassing.innerHTML = "Passing yards: " + selectedTeamData.passYards + "<br />Completions: " + selectedTeamData.completions + "<br />Touchdowns: " + selectedTeamData.touchdowns;
     heroContainerEl.append(teamPassing);
 
     var teamRushing = document.createElement("h4");
-    teamRushing.innerHTML = "Rushing yards per game: " + selectedTeamData.rushYards;
+    teamRushing.innerHTML = "Rushing yards: " + selectedTeamData.rushYards;
     heroContainerEl.append(teamRushing);
 
     var teamReceptions = document.createElement("h4");
-    teamReceptions.innerHTML = "Receiving yards per game: " + selectedTeamData.recYards;
+    teamReceptions.innerHTML = "Receiving yards: " + selectedTeamData.recYards;
     heroContainerEl.append(teamReceptions);
-
 
 };
 
