@@ -126,6 +126,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: center;
     font-size: 24px;
+    
 
   }
   .flex-row2 {
@@ -151,6 +152,15 @@ img {
   border-radius: 4px;
   padding: 8px;
   width: 200px;
+}
+
+.intro p {
+  line-height: 1.7;
+  color: #39a6b2;
+  width: 80%;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
 }
 
   /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
