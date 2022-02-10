@@ -193,8 +193,6 @@ var cityFormEl = document.querySelector("#city-search");
 var citySearchInputEl = document.querySelector("#searched-city");
 var weatherContainerEl = document.querySelector("#current-weather");
 var forecastTitle = document.querySelector("#todayforecast");
-var forecastContainerEl = document.querySelector("#fiveday-container");
-var pastSearchButtonEl = document.querySelector("#past-searches");
 
 var formSumbitHandler = function (event) {
     event.preventDefault();
@@ -256,31 +254,7 @@ var displayWeather = function (weather, searchCity) {
     var lat = weather.coord.lat;
     var lon = weather.coord.lon;
     getUvIndex(lat, lon)
-}
-
-var getUvIndex = function (lat, lon) {
-    var apiKey = "fd40419dcea7a910a399de9c4f2cc307"
-    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
-    fetch(apiURL)
-        .then(function (response) {
-            response.json().then(function (data) {
-                displayUvIndex(data)
-            });
-        });
-}
-
-var get5Day = function (city) {
-    var apiKey = "fd40419dcea7a910a399de9c4f2cc307"
-    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
-
-    fetch(apiURL)
-        .then(function (response) {
-            response.json().then(function (data) {
-                display5Day(data);
-            });
-        });
 };
-
 
 cityFormEl.addEventListener("submit", formSumbitHandler);
 pastSearchButtonEl.addEventListener("click", pastSearchHandler);
