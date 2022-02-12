@@ -19,7 +19,10 @@
                         <a href="#Explore">Explore NFL Teams</a>
                     </li>
                     <li>
-                        <a href="#Stats">Get NFL Stats</a>
+                        <a href="#stats">Get NFL Stats</a>
+                    </li>
+                    <li>
+                        <a href="#kick">Kicking Forecast</a>
                     </li>
                     <li>
                         <a href="#Contact">Contact Us</a>
@@ -53,6 +56,7 @@
                     any handicap and conquer any odds.
                 </p>
             </div>
+            
         </section>
         <section id="Explore">
             <div class="flex-row">
@@ -164,11 +168,12 @@
     </div>
 
     <!-- MODAL -->
+    <section id="stats">
+        <div class="flex-row1">
     <div id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Select Your Team</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -176,7 +181,8 @@
                 <div class="modal-body">
                     <form id="find-team">
                         <div class="team-group">
-                            <label for="modalTeamSelect">Select Team</label>
+                            <h2 class="section-title primary-border">
+                            <label for="modalTeamSelect">Select Your Team To Receive Stats</label></h2>
                             <select name="teams" id="teams">
                                 <option class="team" data-team="Cardinals" value="Arizona Cardinals">Arizona Cardinals</option>
                                 <option class="team" data-team="Falcons" value="Atlanta Falcons">Atlanta Falcons</option>
@@ -229,15 +235,34 @@
             </div>
         </div>
     </div>
-
+        </div>
+        </section>
     </div>
-
-
-
-
-
+</div>
+<section id="kick">
+        <div class="flex-row1">
+        <h3 class="display-3">Game Day Kicking Forecast (Punts & Fields Goals) </h3>
+        <p id="currentDay" class="lead"></p>
+    <main class="container-fluid">
+        <div class="row">
+                <form class="border p-2" id="city-search">
+                    <h4>Search Game City</h4>
+                    <input id="city" type="text" class="form-input" />
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
+                <div class="past-search border" id="past-searches"></div>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="row border selected-city" id="current-forecast">
+                    <div class="col-12">
+                        <h2 id="searched-city"></h2>
+                        <div id="current-weather" class="list-group"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     </div>
 
 
