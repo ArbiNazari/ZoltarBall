@@ -6,7 +6,7 @@ var passFetchArr = [];
 var winFetchArr = [];
 var rushFetchArr = [];
 var recFetchArr = [];
-var teamSearched ='';
+var teamSearched = '';
 
 
 
@@ -118,42 +118,67 @@ function displayStats(team) {
 
     // console.log("stuff");
     // console.log(winFetchArr);
+    var teamNameLength = team.split(" ").length;
+    console.log("This string", teamNameLength);
 
 
 
-    var selectedTeamData = {fullName: team,
-                            mascotName: team.split(" ")[1]}
+    var selectedTeamData = {
+        fullName: team,
+        mascotName: team.split(" ")[teamNameLength - 1]
+    }
+
+    console.log(selectedTeamData);
 
 
 
     //Wins Array
 
     for (var i = 0; i < winFetchArr.length; i++) {
-        if (winFetchArr[i].name === selectedTeamData.fullName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (winFetchArr[i].name === "Washington Football Team xz") {
                 selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }
+        } else if (winFetchArr[i].name === selectedTeamData.fullName) {
+            selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
         }
     }
 
+    // Receiving array 
     for (var i = 0; i < recFetchArr.length; i++) {
-        if (recFetchArr[i].name === selectedTeamData.mascotName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (recFetchArr[i].name === "Redskins") {
                 selectedTeamData.recYards = recFetchArr[i].yards;
+            }
+        } else if (recFetchArr[i].name === selectedTeamData.mascotName) {
+            selectedTeamData.recYards = recFetchArr[i].yards;
         }
     }
-   
+
 
     // Passing Array
     for (var i = 0; i < passFetchArr.length; i++) {
-        if (passFetchArr[i].name === selectedTeamData.mascotName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (passFetchArr[i].name === "Football Team") {
                 selectedTeamData.passYards = passFetchArr[i].passYards;
                 selectedTeamData.completions = passFetchArr[i].completions;
                 selectedTeamData.touchdowns = passFetchArr[i].touchdowns;
+            }
+        } else if (passFetchArr[i].name === selectedTeamData.mascotName) {
+            selectedTeamData.passYards = passFetchArr[i].passYards;
+            selectedTeamData.completions = passFetchArr[i].completions;
+            selectedTeamData.touchdowns = passFetchArr[i].touchdowns;
         }
     }
-  
+
     // Rushing Array
     for (var i = 0; i < rushFetchArr.length; i++) {
-        if (rushFetchArr[i].name === selectedTeamData.mascotName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (rushFetchArr[i].name === "Redskins") {
                 selectedTeamData.rushYards = rushFetchArr[i].yards;
+            }
+        } else if (rushFetchArr[i].name === selectedTeamData.mascotName) {
+            selectedTeamData.rushYards = rushFetchArr[i].yards;
         }
     }
 
@@ -257,4 +282,4 @@ var displayWeather = function (weather, searchCity) {
 };
 
 cityFormEl.addEventListener("submit", formSumbitHandler);
-pastSearchButtonEl.addEventListener("click", pastSearchHandler);
+// pastSearchButtonEl.addEventListener("click", pastSearchHandler);
