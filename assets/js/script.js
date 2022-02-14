@@ -139,7 +139,59 @@ function displayStats(team) {
             if (winFetchArr[i].name === "Washington Football Team xz") {
                 selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
             }
-        } else if (winFetchArr[i].name === selectedTeamData.fullName) {
+        } else if (selectedTeamData.fullName === "Chicago Bears") {
+            if (winFetchArr[i].name === "Chicago Bears xy") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }
+        } else if (selectedTeamData.fullName === "Los Angeles Rams") {
+            if (winFetchArr[i].name === "Los Angeles Rams xy") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }
+        } else if (selectedTeamData.fullName === "Baltimore Ravens") {
+            if (winFetchArr[i].name === "Baltimore Ravens xy") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }    
+        } else if (selectedTeamData.fullName === "Cleveland Browns") {
+            if (winFetchArr[i].name === "Cleveland Browns xy") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }    
+        } else if (selectedTeamData.fullName === "Indianapolis Colts") {
+            if (winFetchArr[i].name === "Indianapolis Colts xy") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }    
+        } else if (selectedTeamData.fullName === "Tampa Bay Buccaneers") {
+            if (winFetchArr[i].name === "Tampa Bay Buccaneers xy") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }    
+        } else if (selectedTeamData.fullName === "Tennessee Titans") {
+            if (winFetchArr[i].name === "Tennessee Titans xz") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        }  else if (selectedTeamData.fullName === "New Orleans Saints") {
+            if (winFetchArr[i].name === "New Orleans Saints xz") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        } else if (selectedTeamData.fullName === "Pittsburgh Steelers") {
+            if (winFetchArr[i].name === "Pittsburgh Steelers xz") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        }  else if (selectedTeamData.fullName === "Seattle Seahawks") {
+            if (winFetchArr[i].name === "Seattle Seahawks xz") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        }  else if (selectedTeamData.fullName === "Buffalo Bills") {
+            if (winFetchArr[i].name === "Buffalo Bills xz") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        } else if (selectedTeamData.fullName === "Green Bay Packers") {
+            if (winFetchArr[i].name === "Green Bay Packers xz*") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        } else if (selectedTeamData.fullName === "Kansas City Chiefs") {
+            if (winFetchArr[i].name === "Kansas City Chiefs xz*") {
+                selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }         
+        }   else if (winFetchArr[i].name === selectedTeamData.fullName) {
             selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
         }
     }
