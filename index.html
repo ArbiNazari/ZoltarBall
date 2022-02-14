@@ -216,6 +216,32 @@
                         
                     </form>
                 </div>
+                <!--Weather-->
+                <section id="kick">
+                    <div class="flex-row1">
+                    <h3 class="display-3">Game Day Kicking Forecast (Punts & Fields Goals) </h3>
+                    <p id="currentDay" class="lead"></p>
+                <main class="container-fluid">
+                    <div class="row">
+                            <form class="border p-2" id="city-search">
+                                <h4>Search Game City</h4>
+                                <input id="city" type="text" class="form-input" />
+                                
+                            </form>
+                            <div class="past-search border" id="past-searches"></div>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <div class="row border selected-city" id="current-forecast">
+                                <div class="col-12">
+                                    <h2 id="searched-city"></h2>
+                                    <div id="current-weather" class="list-group"></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
                 <div>
                     <button id="modalBtn" class="button btn-search">Click Here</button>
                 </div>
@@ -225,13 +251,15 @@
 
     </div>
 
+    <!--Applying Weather-->
     
 
+    <!--Modal-->
     <div id="simpleModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <span class="closeBtn">&times;</span>
-                <h2>Team Stats</h2>
+                <h2>Team Stats & Weather</h2>
             </div>
             <div class="modal-body">
                             

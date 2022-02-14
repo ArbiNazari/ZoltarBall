@@ -242,3 +242,79 @@ function displayStats(team) {
 
 // get stats button 
 searchBtnEl.addEventListener("click", getStats);
+
+//weather
+
+var cities = [];
+var cityInputEl = document.querySelector("#city");
+var cityFormEl = document.querySelector("#city-search");
+var citySearchInputEl = document.querySelector("#searched-city");
+var weatherContainerEl = document.querySelector("#current-weather");
+var forecastTitle = document.querySelector("#todayforecast");
+var citySearchEl = document.querySelector(".btn-search");
+
+
+var formSumbitHandler = function (event) {
+    event.preventDefault();
+    var city = cityInputEl.value.trim();
+    if (city) {
+        getCityWeather(city);
+        get5Day(city);
+        cities.unshift({ city });
+        cityInputEl.value = "";
+    } else {
+        alert("Please Enter The Name of a City");
+    }
+    saveSearch();
+    pastSearch(city);
+}
+
+var saveSearch = function () {
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+var getCityWeather = function (city) {
+    var apiKey = "fd40419dcea7a910a399de9c4f2cc307"
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+
+    fetch(apiURL)
+        .then(function (response) {
+            response.json().then(function (data) {
+                displayWeather(data, city);
+            });
+        });
+};
+
+var displayWeather = function (weather, searchCity) {
+    weatherContainerEl.textContent = "";
+    citySearchInputEl.textContent = searchCity;
+
+    var currentDate = document.createElement("span")
+    currentDate.textContent = " (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
+    citySearchInputEl.appendChild(currentDate);
+
+    var temperatureEl = document.createElement("span");
+    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F ";
+    temperatureEl.classList = "list-group-item"
+
+    var humidityEl = document.createElement("span");
+    humidityEl.textContent = "Humidity: " + weather.main.humidity + " % ";
+    humidityEl.classList = "list-group-item"
+
+    var windSpeedEl = document.createElement("span");
+    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH ";
+    windSpeedEl.classList = "list-group-item"
+
+    modalBodyEl.appendChild(temperatureEl);
+
+    modalBodyEl.appendChild(humidityEl);
+
+    modalBodyEl.appendChild(windSpeedEl);
+
+    var lat = weather.coord.lat;
+    var lon = weather.coord.lon;
+    getUvIndex(lat, lon)
+};
+
+citySearchEl.addEventListener("click", formSumbitHandler);
+// pastSearchButtonEl.addEventListener("click", pastSearchHandler);
