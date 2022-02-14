@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style2.css">
     <title>ZoltarBall - Informed Stats Better Bets </title>
 </head>
 
@@ -164,67 +165,59 @@
     </div>
 
     <!-- MODAL -->
-    <div id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+     <div id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Select Your Team</h5>
+            <div class="modal_content">
+                <div class="modal_header">
+                    <h5 class="modal-title">Select Team To Get Season Stats </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal_body">
                     <form>
                         <div class="form-group">
                             <label for="modalTeamSelect">Select Team</label>
                             <select name="teams" id="teams">
-                                <option value="arizona cardinals">Arizona Cardinals</option>
-                                <option value="atlanta falcons">Atlanta Falcons</option>
-                                <option value="baltimore ravens">Baltimore Ravens</option>
-                                <option value="buffalo bills">Buffalo Bills</option>
-                                <option value="carolina panthers">Carolina Panthers</option>
-                                <option value="chicago bears">Chicago Bears</option>
-                                <option value="cincinnati bengals">Cincinnati Bengals</option>
-                                <option value="cleveland browns">Cleveland Browns</option>
-                                <option value="dallas cowboys">Dallas Cowboys</option>
-                                <option value="denver broncos">Denver Broncos</option>
-                                <option value="detroit lions">Detroit Lions</option>
-                                <option value="green bay packers">Green Bay Packers</option>
-                                <option value="houston texans">Houston Texans</option>
-                                <option value="indianapolis colts">Indianapolis Colts</option>
-                                <option value="jacksonville jaguars">Jacksonville Jaguars</option>
-                                <option value="kansas city chiefs">Kansas City Chiefs</option>
-                                <option value="las vegas raiders">Las Vegas Raiders</option>
-                                <option value="los angeles chargers">Los Angeles Chargers</option>
-                                <option value="los angeles rams">Los Angeles Rams</option>
-                                <option value="miami dolphins">Miami Dolphins</option>
-                                <option value="minnesota vikings">Minnesota Vikings</option>
-                                <option value="new england patriots">New England Patriots</option>
-                                <option value="new orleans saints">New Orleans Saints</option>
-                                <option value="new york giants">New York Giants</option>
-                                <option value="new york jets">New York Jets</option>
-                                <option value="philadelphia eagles">Philadelphia Eagles</option>
-                                <option value="pittsburgh steelers">Pittsburgh Steelers</option>
-                                <option value="san francisco 49ers">San Francisco 49ers</option>
-                                <option value="seattle seahawks">Seattle Seahawks</option>
-                                <option value="tampa bay buccaneers">Tampa Bay Buccaneers</option>
-                                <option value="tennessee titans">Tennessee Titans</option>
-                                <option value="washington commanders">Washington Commanders</option>
+                                <option class="team" data-team="Cardinals" value="Arizona Cardinals">Arizona Cardinals</option>
+                                <option class="team" data-team="Falcons" value="Atlanta Falcons">Atlanta Falcons</option>
+                                <option class="team" data-team="Ravens" value="Baltimore Ravens">Baltimore Ravens</option>
+                                <option class="team" data-team="Bills" value="Buffalo Bills">Buffalo Bills</option>
+                                <option class="team" data-team="Panthers" value="Carolina Panthers">Carolina Panthers</option>
+                                <option class="team" data-team="Bears" value="Chicago Bears">Chicago Bears</option>
+                                <option class="team" data-team="Bengals" value="Cincinnati Bengals">Cincinnati Bengals</option>
+                                <option class="team" data-team="Browns" value="Cleveland Browns">Cleveland Browns</option>
+                                <option class="team" data-team="Cowboys" value="Dallas Cowboys">Dallas Cowboys</option>
+                                <option class="team" data-team="Broncos" value="Denver Broncos">Denver Broncos</option>
+                                <option class="team" data-team="Lions" value="Detroit Lions">Detroit Lions</option>
+                                <option class="team" data-team="Packers" value="Green Bay Packers">Green Bay Packers</option>
+                                <option class="team" data-team="Texans" value="Houston Texans">Houston Texans</option>
+                                <option class="team" data-team="Colts" value="Indianapolis Colts">Indianapolis Colts</option>
+                                <option class="team" data-team="Jaguars" value="0">Jacksonville Jaguars</option>
+                                <option class="team" data-team="Chiefs" value="Kansas City Chiefs">Kansas City Chiefs</option>
+                                <option class="team" data-team="Raiders" value="Las Vegas Raiders">Las Vegas Raiders</option>
+                                <option class="team" data-team="Chargers" value="Los Angeles Chargers">Los Angeles Chargers</option>
+                                <option class="team" data-team="Rams" value="Los Angeles Rams">Los Angeles Rams</option>
+                                <option class="team" data-team="Dolphins" value="Miami Dolphins">Miami Dolphins</option>
+                                <option class="team" data-team="Vikings" value="Minnesota Vikings">Minnesota Vikings</option>
+                                <option class="team" data-team="Patriots" value="New England Patriots">New England Patriots</option>
+                                <option class="team" data-team="Saints" value="New Orleans Saints">New Orleans Saints</option>
+                                <option class="team" data-team="Giants" value="New York Giants">New York Giants</option>
+                                <option class="team" data-team="Jets" value="New York Jets">New York Jets</option>
+                                <option class="team" data-team="Eagles" value="Philadelphia Eagles">Philadelphia Eagles</option>
+                                <option class="team" data-team="Steelers" value="Pittsburgh Steelers">Pittsburgh Steelers</option>
+                                <option class="team" data-team="49ers" value="San Francisco 49ers">San Francisco 49ers</option>
+                                <option class="team" data-team="Seahawks" value="Seattle Seahawks">Seattle Seahawks</option>
+                                <option class="team" data-team="Buccaneers" value="Tampa Bay Buccaneers">Tampa Bay Buccaneers</option>
+                                <option class="team" data-team="Titans" value="Tennessee Titans">Tennessee Titans</option>
+                                <option class="team" data-team="Redskins" value="Washington Commanders">Washington Commanders</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="modalTeamStats">Stats</label>
-                            <select name="stats" id="stats">
-                                <option value="win percentage">Win Percentage</option>
-                                <option value="passing yards">Passing Yards</option>
-                                <option value="rushing yards">Rushing Yards</option>
-                                <option value="receiving yards">Receiving Yards</option>
-                            </select>
-                        </div>
+                        
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn-search">Get Stats</button>
+                <div>
+                    <button id="modalBtn" class="button btn-search">Click Here</button>
                 </div>
             </div>
         </div>
@@ -232,6 +225,23 @@
 
     </div>
 
+    
+
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closeBtn">&times;</span>
+                <h2>Team Stats</h2>
+            </div>
+            <div class="modal-body">
+                            
+            </div>
+            <div class="modal-footer">
+                <h3>Happy Betting!!</h3>
+            </div>
+        </div>
+    </div>
+    
 
 
 
@@ -248,6 +258,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="assets/script2.js"></script>
     <br>
     <br>
     <footer class="jumbotronfooter">
