@@ -40,7 +40,7 @@ body {
 }
 
 .modal-header{
-    background-color: coral;
+    background-color: black;
     padding: 15px;
     color: white;
     text-align: center;
@@ -52,7 +52,7 @@ body {
 }
 
 .modal-footer{
-    background: coral;
+    background: black;
     padding: 10px;
     color: white;
     text-align: center;
