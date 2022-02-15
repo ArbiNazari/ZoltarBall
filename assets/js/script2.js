@@ -1,12 +1,47 @@
+// get modal elements
+var modal = document.getElementById('simpleModal');
+//get open modal button
+var modalBtn = document.getElementById('modalBtn');
+//get close button
+var closeBtn = document.getElementsByClassName('closeBtn')[0];
+
+// list of teams
 teamListEl = document.querySelector("#teams");
-teamFormSearchEl = document.querySelector("#find-team");
-heroContainerEl = document.querySelector("#hero-section");
+modalBodyEl = document.querySelector(".modal-body");
 searchBtnEl = document.querySelector(".btn-search");
+
+// Listen for click
+modalBtn.addEventListener('click', openModal);
+
+// Listen for close click
+closeBtn.addEventListener('click', closeModal);
+
+// listen for outside click
+window.addEventListener('click', outsideClick);
+
+// function to open modal
+function openModal(){
+    modal.style.display = 'block';
+}
+
+// function to close modal
+function closeModal(){
+    modal.style.display = 'none';
+}
+
+// function to close modal if outside click
+function outsideClick(e){
+    if(e.target == modal){
+    modal.style.display = 'none';
+    }
+}
+
+// CODE TO RETRIEVE STATS
 var passFetchArr = [];
 var winFetchArr = [];
 var rushFetchArr = [];
 var recFetchArr = [];
-var teamSearched ='';
+var teamSearched = '';
 
 
 
@@ -99,9 +134,8 @@ function getStats() {
 
 
 function displayStats(team) {
-    // removes original hero banner 
-    heroContainerEl.classList.remove("hero");
-    heroContainerEl.classList.add("stats-team");
+
+    modalBodyEl.classList.add("stats-team");
 
 
     var x = document.getElementById("teams");
@@ -110,7 +144,7 @@ function displayStats(team) {
 
     var teamName = document.createElement("h2");
     teamName.innerHTML = y;
-    heroContainerEl.append(teamName);
+    modalBodyEl.append(teamName);
 
     var selectedTeam = document.getElementById("teams");
     var winTeamName = selectedTeam.getAttribute('value');
@@ -118,42 +152,67 @@ function displayStats(team) {
 
     // console.log("stuff");
     // console.log(winFetchArr);
+    var teamNameLength = team.split(" ").length;
+    console.log("This string", teamNameLength);
 
 
 
-    var selectedTeamData = {fullName: team,
-                            mascotName: team.split(" ")[1]}
+    var selectedTeamData = {
+        fullName: team,
+        mascotName: team.split(" ")[teamNameLength - 1]
+    }
+
+    console.log(selectedTeamData);
 
 
 
     //Wins Array
 
     for (var i = 0; i < winFetchArr.length; i++) {
-        if (winFetchArr[i].name === selectedTeamData.fullName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (winFetchArr[i].name === "Washington Football Team xz") {
                 selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
+            }
+        } else if (winFetchArr[i].name === selectedTeamData.fullName) {
+            selectedTeamData.winRatePercentage = winFetchArr[i].winRatePercentage;
         }
     }
 
+    // Receiving array 
     for (var i = 0; i < recFetchArr.length; i++) {
-        if (recFetchArr[i].name === selectedTeamData.mascotName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (recFetchArr[i].name === "Redskins") {
                 selectedTeamData.recYards = recFetchArr[i].yards;
+            }
+        } else if (recFetchArr[i].name === selectedTeamData.mascotName) {
+            selectedTeamData.recYards = recFetchArr[i].yards;
         }
     }
-   
+
 
     // Passing Array
     for (var i = 0; i < passFetchArr.length; i++) {
-        if (passFetchArr[i].name === selectedTeamData.mascotName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (passFetchArr[i].name === "Football Team") {
                 selectedTeamData.passYards = passFetchArr[i].passYards;
                 selectedTeamData.completions = passFetchArr[i].completions;
                 selectedTeamData.touchdowns = passFetchArr[i].touchdowns;
+            }
+        } else if (passFetchArr[i].name === selectedTeamData.mascotName) {
+            selectedTeamData.passYards = passFetchArr[i].passYards;
+            selectedTeamData.completions = passFetchArr[i].completions;
+            selectedTeamData.touchdowns = passFetchArr[i].touchdowns;
         }
     }
-  
+
     // Rushing Array
     for (var i = 0; i < rushFetchArr.length; i++) {
-        if (rushFetchArr[i].name === selectedTeamData.mascotName) {
+        if (selectedTeamData.fullName === "Washington Commanders") {
+            if (rushFetchArr[i].name === "Redskins") {
                 selectedTeamData.rushYards = rushFetchArr[i].yards;
+            }
+        } else if (rushFetchArr[i].name === selectedTeamData.mascotName) {
+            selectedTeamData.rushYards = rushFetchArr[i].yards;
         }
     }
 
@@ -161,29 +220,28 @@ function displayStats(team) {
 
     var teamSeasonStats = document.createElement("h3");
     teamSeasonStats.innerHTML = "Season stats";
-    heroContainerEl.append(teamSeasonStats);
+    modalBodyEl.append(teamSeasonStats);
 
     var teamWins = document.createElement("h4");
     teamWins.innerHTML = "Win Percentage: " + selectedTeamData.winRatePercentage;
-    heroContainerEl.append(teamWins);
+    modalBodyEl.append(teamWins);
 
     var teamPassing = document.createElement("h4");
     teamPassing.innerHTML = "Passing yards: " + selectedTeamData.passYards + "<br />Completions: " + selectedTeamData.completions + "<br />Touchdowns: " + selectedTeamData.touchdowns;
-    heroContainerEl.append(teamPassing);
+    modalBodyEl.append(teamPassing);
 
     var teamRushing = document.createElement("h4");
     teamRushing.innerHTML = "Rushing yards: " + selectedTeamData.rushYards;
-    heroContainerEl.append(teamRushing);
+    modalBodyEl.append(teamRushing);
 
     var teamReceptions = document.createElement("h4");
     teamReceptions.innerHTML = "Receiving yards: " + selectedTeamData.recYards;
-    heroContainerEl.append(teamReceptions);
+    modalBodyEl.append(teamReceptions);
 
 };
 
 // get stats button 
 searchBtnEl.addEventListener("click", getStats);
-
 
 //weather
 
@@ -193,6 +251,8 @@ var cityFormEl = document.querySelector("#city-search");
 var citySearchInputEl = document.querySelector("#searched-city");
 var weatherContainerEl = document.querySelector("#current-weather");
 var forecastTitle = document.querySelector("#todayforecast");
+var citySearchEl = document.querySelector(".btn-search");
+
 
 var formSumbitHandler = function (event) {
     event.preventDefault();
@@ -234,27 +294,27 @@ var displayWeather = function (weather, searchCity) {
     citySearchInputEl.appendChild(currentDate);
 
     var temperatureEl = document.createElement("span");
-    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
+    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F ";
     temperatureEl.classList = "list-group-item"
 
     var humidityEl = document.createElement("span");
-    humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
+    humidityEl.textContent = "Humidity: " + weather.main.humidity + " % ";
     humidityEl.classList = "list-group-item"
 
     var windSpeedEl = document.createElement("span");
-    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH ";
     windSpeedEl.classList = "list-group-item"
 
-    weatherContainerEl.appendChild(temperatureEl);
+    modalBodyEl.appendChild(temperatureEl);
 
-    weatherContainerEl.appendChild(humidityEl);
+    modalBodyEl.appendChild(humidityEl);
 
-    weatherContainerEl.appendChild(windSpeedEl);
+    modalBodyEl.appendChild(windSpeedEl);
 
     var lat = weather.coord.lat;
     var lon = weather.coord.lon;
     getUvIndex(lat, lon)
 };
 
-cityFormEl.addEventListener("submit", formSumbitHandler);
-pastSearchButtonEl.addEventListener("click", pastSearchHandler);
+citySearchEl.addEventListener("click", formSumbitHandler);
+// pastSearchButtonEl.addEventListener("click", pastSearchHandler);
