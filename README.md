@@ -47,3 +47,4 @@ Created By: Daylon Polk, Kyle Bader, Steven Rousta and Arbi Nazari (Copyright 20
       Zoltar is Designed for Entertainment Purposes Only - The National Helpline on Problem Gambling 
       operates the National Problem Gambling Helpline Network (1-800-522-4700).
       
+![mock](https://user-images.githubusercontent.com/95839411/153990481-a9574d01-3b78-42ce-8b14-735cadc90c73.jpg)
